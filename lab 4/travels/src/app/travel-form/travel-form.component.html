@@ -1,0 +1,51 @@
+<div id="flex-container">
+
+  <div id="form-container" *ngIf="displayForm">
+    <button id="closeButton" (click)="closeEvent.emit()">X</button>
+    <form id="form" [formGroup]="travelForm" (ngSubmit)="onSubmit()">
+      <br>
+
+      <label for="name">Nazwa: </label>
+      <input id="name" type="text" formControlName="name" />
+
+      <hr />
+
+      <label for="country">Kraj: </label>
+      <input id="country" type="text" formControlName="country" />
+
+      <hr />
+
+      <label for="start-date">Początek: </label>
+      <input id="start-date" type="date" formControlName="startDate" />
+
+      <hr />
+
+      <label for="end-date">Koniec: </label>
+      <input id="end-date" type="date" formControlName="endDate" />
+
+      <hr />
+
+      <label for="price">Cena: </label>
+      <input id="price" type="number" formControlName="price" />
+      <hr />
+
+      <label for="seats">Miejsca: </label>
+      <input id="seats" type="number" formControlName="seats" />
+      <hr />
+
+      <label for="description">Opis: </label>
+      <input id="description" type="text" formControlName="description" />
+      <hr />
+      <label for="image-link">Zdjęcie: </label>
+      <input
+        id="image-link"
+        type="file"
+        accept="image/*"
+        formControlName="imageLink"
+      />
+      <hr />
+
+      <button id="submit-button" type="submit" [disabled]="!travelForm.valid">Utwórz</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#container {
+  display: flex;
+}
+
+#company-name {
+  text-align: center;
+  font-size: 30px;
+}
+#box {
+  float: left;
+  display: flex;
+  justify-content: center;
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 58vw;
+  padding: 10px;
+  box-shadow: 5px 5px 5px lightgrey;
+}
+
+.nav-element {
+  color: black;
+  margin-left: 3%;
+  margin-right: 3%;
+  font-weight: bold;
+  font-size: large;
+  text-decoration: none;
+}
+#cart-info {
+  float: right;
+  font-size: large;
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 30vw;
+  padding: 10px;
+  box-shadow: 5px 5px 5px lightgrey;
+  color: black;
+
+}
+#notification {
+  color: black;
+  margin-right: 0.5%;
+  float: right;
+  font-size: large;
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 5vw;
+  padding: 6px;
+  box-shadow: 5px 5px 5px lightgrey;
+}

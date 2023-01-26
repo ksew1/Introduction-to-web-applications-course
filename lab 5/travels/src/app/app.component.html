@@ -1,0 +1,34 @@
+<div id="company-name">minimalistic<b>travel.</b></div>
+<nav id="box">
+  <a class="nav-element" routerLink="/home">Home</a>
+  <a class="nav-element" routerLink="/travels">Travels</a>
+  <a class="nav-element" routerLink="/form">Form</a>
+  <a class="nav-element" routerLink="/cart">Cart</a>
+  <a class="nav-element" routerLink="/history">History</a>
+</nav>
+<a routerLink="/cart">
+  <div id="cart-info">
+    <b>Zamówione wycieczki: </b> {{ data.counter }} <b>Cena: </b>
+    {{ data.cost | currency }}
+  </div>
+
+</a>
+
+<a routerLink="/history">
+  <div id="notification">
+    <div *ngIf="data.near > 0; then thenBlock; else elseBlock"></div>
+    <ng-template #thenBlock>
+      <span class="material-symbols-outlined"> notifications_active </span>
+      <span>{{ data.near }}</span>
+    </ng-template>
+    <ng-template #elseBlock
+      ><span class="material-symbols-outlined"> notifications </span>
+    </ng-template>
+  </div>
+
+</a>
+
+<div style="clear: both"></div>
+<div id="container">
+  <router-outlet></router-outlet>
+</div>

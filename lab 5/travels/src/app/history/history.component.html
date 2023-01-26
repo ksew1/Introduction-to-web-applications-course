@@ -1,0 +1,48 @@
+<div id="box">
+  <div id="flex-box">
+    <div *ngFor="let travel of data.travels; let i = index">
+      <div
+        class="record"
+        *ngIf="data.bought[i] > 0 && filterArray.includes(status[i])"
+      >
+        <h4 class="travel-text">{{ travel.name | uppercase }}</h4>
+
+        <b>Status: </b>
+        <span [ngSwitch]="status[i]">
+          <span *ngSwitchCase="0"> archiwalna</span>
+          <span *ngSwitchCase="1">aktywna</span>
+          <span *ngSwitchCase="2">oczekiwania na rozpoczęcie</span>
+        </span>
+        <hr />
+        <b>Data zakupu: </b> {{ data.date[i] }}
+        <hr />
+
+        <span><b>Lokalizacja: </b> {{ travel.country | uppercase }}</span>
+
+        <hr />
+
+        <span> <b>Start: </b>{{ travel.startDate }}</span>
+
+        <hr />
+
+        <span><b>Koniec: </b> {{ travel.endDate }}</span>
+
+        <hr />
+
+        <span> <b>Cena: </b> {{ travel.price | currency }} </span>
+        <hr />
+
+        <span>
+          <b>Łączna cena: </b> {{ travel.price * data.bought[i] | currency }}
+        </span>
+        <hr />
+
+        <span> <b>Ilość biletów: </b> {{ data.bought[i] }} </span>
+      </div>
+    </div>
+  </div>
+  <app-history-filter
+    id="filter"
+    (filterEvent)="addFilterData($event)"
+  ></app-history-filter>
+</div>

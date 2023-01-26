@@ -1,0 +1,33 @@
+
+<form id="form" [formGroup]="opinionForm" (ngSubmit)="onSubmit()">
+  <br />
+
+  <label for="nick">Nick: </label>
+  <input id="nick" type="text" formControlName="nick" />
+
+  <hr />
+
+  <label for="nick">Nazwa: </label>
+  <input id="nick" type="text" formControlName="name" />
+
+  <hr />
+
+  <label for="opinion">Opinia: </label>
+  <input id="opinion" type="text" formControlName="opinion" />
+
+  <hr />
+
+  <label for="date">Data: </label>
+  <input id="date" type="date" formControlName="date" />
+
+  <hr />
+  <app-travel-rating
+      (ratingEvent)="addRatingData($event)"
+    ></app-travel-rating>
+  <button id="submit-button" type="submit">
+    Utwórz
+  </button>
+  <div *ngFor="let error of errors">
+    {{error}}
+  </div>
+</form>

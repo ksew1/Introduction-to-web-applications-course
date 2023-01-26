@@ -1,0 +1,28 @@
+
+#form-container {
+  top: 15%;
+  left: 35%;
+  background-color: white;
+  display: inline-block;
+  padding: 1%;
+  border: 2px solid black;
+  border-radius: 10px;
+  position: fixed;
+  animation: slide-top;
+  animation-duration: 1s;
+}
+
+
+
+#submit-button {
+  text-align: center;
+  width: 15vw;
+  padding: 3%;
+  border-radius: 20px;
+  background-color: black;
+  color: white;
+  border: 1px solid black;
+  box-shadow: 5px 5px 5px lightgrey;
+  margin-left: 15%;
+
+}

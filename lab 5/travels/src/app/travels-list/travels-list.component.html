@@ -1,0 +1,98 @@
+<div id="flex-container">
+  <div id="travel-list" #parent>
+    <div class="travel-container" *ngFor="let travel of travels; let i = index">
+      <div
+        *ngIf="
+          (travels
+            | searchPipe
+              : filter
+              : filterObject.name
+              : filterObject.priceMin
+              : filterObject.priceMax
+              : filterObject.startDate
+              : filterObject.endDate
+              : filterObject.ratingMin
+              : filterObject.ratingMax
+              : ratings
+              : filterObject.country)[i]
+        "
+        class="travel"
+        [ngStyle]="{
+          'border-color':
+            travel.price == minPrice
+              ? 'red'
+              : travel.price == maxPrice
+              ? 'green'
+              : 'black'
+        }"
+        style="margin: 0px 15px 30px 15px"
+      >
+        <button class="deleteButton" (click)="deleteTravel(i)">X</button>
+        <div class="info">
+          <a routerLink="/travels/{{ i }}">
+            <img class="image" [src]="travel.imageLink" />
+          </a>
+
+          <h4 class="travel-text">{{ travel.name | uppercase }}</h4>
+
+          <span class="travel-text"> {{ travel.price | currency }} </span>
+
+          <hr class="line" />
+
+          <span
+            class="travel-text"
+            [ngStyle]="{ color: travel.seats > 3 ? 'green' : 'red' }"
+          >
+            <div
+              *ngIf="travel.seats == 0; then thenBlock; else elseBlock"
+            ></div>
+            <ng-template #thenBlock> Brak miejsc </ng-template>
+            <ng-template #elseBlock>{{ travel.seats }} </ng-template>
+          </span>
+
+          <div class="button-container">
+            <button
+              class="plus-button"
+              [ngStyle]="{
+                display: travel.seats == 0 ? 'none' : 'inline-block'
+              }"
+              (click)="orderTravel(travel)"
+            >
+              +
+            </button>
+            <button
+              class="minus-button"
+              [ngStyle]="{
+                display:
+                  travel.seats == this.maxSeats[i] ? 'none' : 'inline-block'
+              }"
+              (click)="resign(travel)"
+            >
+              -
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="additional">
+    <div
+      id="orderedCounter"
+      [ngStyle]="{ 'background-color': orderedCounter >= 10 ? 'green' : 'red' }"
+    >
+      Zamówione wycieczki {{ orderedCounter }}
+    </div>
+
+    <app-filter
+      (filterEvent)="addFilterData($event)"
+      [maxPrice]="maxPrice"
+      [minPrice]="minPrice"
+    ></app-filter>
+    <button
+      (click)="changeFilter()"
+      id="change-filter-button"
+      [innerText]="filterButtonText"
+    ></button>
+  </div>
+</div>

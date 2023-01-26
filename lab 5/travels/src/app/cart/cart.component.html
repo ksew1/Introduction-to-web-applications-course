@@ -1,0 +1,17 @@
+<div id="cart-container">
+  <div id="cart-info">
+    <b>Cena zakupionych wycieczek: </b> {{ data.cost | currency }} <br />
+    <b>Suma zamówionych wycieczek:</b> {{ data.counter }}
+    <div *ngFor="let travel of data.travels; let i = index">
+      <div *ngIf="data.maxSeats[i] - travel.seats > 0">
+        <hr />
+        <b> {{ travel.name }}</b> <br />
+        <b> Ilość: </b> {{ data.maxSeats[i] - travel.seats }}
+        <b>Cena: </b>
+        {{ cost[i] | currency }}
+        <br>
+        <button class="buy" (click)="buy(i)">Kup</button>
+      </div>
+    </div>
+  </div>
+</div>

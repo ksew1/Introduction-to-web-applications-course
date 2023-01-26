@@ -1,0 +1,126 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+#box {
+    min-height: 300vh;
+    width: 100vw;
+    display: flex;
+    background-color: white;
+}
+
+#main-view {
+    margin: 1%;
+    display: flex;
+    position: relative;
+    height: auto;
+    width: 98vw;
+    background-color: rgb(21, 40, 62);
+    border-radius: 20px;
+}
+
+#my-view {
+    position: absolute;
+    width: 10%;
+    height: 17%;
+    margin-left: 2%;
+    margin-top: 2%;
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 5;
+    box-shadow: 5px 7px 35px 11px rgba(28, 28, 28, 1);
+}
+#guest-view {
+    position: relative;
+    z-index: 4;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    top: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+    font-size: 3vw !important;
+}
+
+.side-options {
+    z-index: 10;
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    height: fit-content;
+    width: fit-content;
+    border-radius: 5rem 5rem 5rem 5rem;
+    padding: 1% 0;
+    bottom: 4%;
+    margin-left: 2%;
+    box-shadow: 5px 7px 35px 11px rgba(28, 28, 28, 1);
+}
+
+.circle {
+    display: inline-block;
+    position: relative;
+    margin-top: 10%;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: lightseagreen;
+}
+
+.options {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    width: auto;
+    height: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    align-items: flex-end;
+    justify-items: center;
+}
+
+.white-circle {
+    background-color: white;
+    margin: 5%;
+    padding: 2% 2% 2% 2%;
+    border-radius: 50%;
+    text-align: center;
+    color: lightseagreen;
+    box-shadow: 5px 7px 35px 11px rgba(28, 28, 28, 1);
+}
+
+#red-circle {
+    background-color: red;
+    margin: 5%;
+    padding: 2% 2% 2% 2%;
+    border-radius: 50%;
+    text-align: center;
+    color: white;
+    box-shadow: 5px 7px 35px 11px rgba(28, 28, 28, 1);
+}
+
+.image-view {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+@media screen and (max-width: 600px) {
+    .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+        font-size: 7vw !important;
+    }
+    #guest-view {
+        width: 100%;
+        border-radius: 25px;
+    }
+    #my-view {
+        width: 25%;
+    }
+}

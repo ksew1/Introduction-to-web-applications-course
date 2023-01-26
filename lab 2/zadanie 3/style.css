@@ -1,0 +1,70 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+#box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 90%;
+    margin-top: auto;
+    margin-left: auto;
+}
+.card {
+    flex-basis: 25%;
+    box-shadow: 5px 10px 8px rgb(241, 241, 241);
+    box-shadow: 5px 10px 8px #888888;
+    margin: 2% 2% 2% 2%;
+}
+
+.city {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.description {
+    background-color: white;
+    margin: 0;
+    padding: 6%;
+    height: auto;
+    padding-bottom: 20%;
+}
+
+.button {
+    background-color: rgb(215, 116, 107);
+    color: white;
+    width: 40%;
+    padding: 4%;
+    text-align: center;
+}
+.text {
+    color: #888888;
+}
+
+.line {
+    border: 0px;
+    border-top: 1px solid gainsboro;
+}
+
+.short_text {
+    color: rgb(215, 116, 107);
+}
+
+.city {
+    width: 100%;
+    height: auto;
+}
+
+@media screen and (max-width: 1024px) {
+    .card {
+        flex-basis: 40%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .card {
+        flex-basis: 75%;
+    }
+}

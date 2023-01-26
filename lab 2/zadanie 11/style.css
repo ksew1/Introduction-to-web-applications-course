@@ -1,0 +1,130 @@
+body {
+    background-color: yellow;
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+}
+
+#box {
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+}
+.item {
+    margin: 0;
+    color: white;
+    display: block;
+    padding-top: 5px;
+    padding-right: 15px;
+    padding-left: 30px;
+    padding-bottom: 5px;
+    font-size: 16px;
+    position: relative;
+}
+#menu {
+    width: 250px;
+    display: block;
+    border-radius: 10px;
+    overflow: hidden;
+    list-style: none;
+    text-decoration: none;
+}
+.menu-item {
+    overflow: hidden;
+}
+
+.menu-item:target .sub-menu {
+    max-height: 200px;
+}
+
+.menu-item:target .item-header {
+    background-color: rgb(193, 98, 96);
+}
+
+.menu-item:target .triangle {
+    display: block;
+}
+
+.item-header {
+    display: block;
+    padding: 20px 15px;
+    background-color: rgb(234, 114, 176);
+    color: white;
+    position: relative;
+}
+
+.triangle {
+    display: none;
+    position: absolute;
+    width: 0;
+    height: 0;
+    right: 15px;
+    bottom: -10px;
+    z-index: 1;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 12px solid rgb(193, 98, 96);
+}
+
+.sub-menu {
+    background: rgb(55, 112, 160);
+    overflow: hidden;
+    max-height: 0;
+    transition: 500ms ease all;
+}
+
+.item:hover {
+    background: rgb(55, 112, 160);
+    background: -moz-linear-gradient(
+        top,
+        rgb(55, 112, 160) 0%,
+        rgb(55, 112, 160) 50%,
+        rgb(140, 166, 199) 51%,
+        rgb(140, 166, 199) 100%
+    );
+    background: -webkit-linear-gradient(
+        top,
+        rgb(55, 112, 160) 0%,
+        rgb(55, 112, 160) 50%,
+        rgb(140, 166, 199) 51%,
+        rgb(140, 166, 199) 100%
+    );
+
+    background: linear-gradient(
+        top,
+        rgb(55, 112, 160) 0%,
+        rgb(55, 112, 160) 50%,
+        rgb(140, 166, 199) 51%,
+        rgb(140, 166, 199) 100%
+    );
+
+    transition: all 0.3s;
+    border-bottom: 1px solid #394c7f;
+}
+
+.item:hover:before {
+    content: "";
+    position: absolute;
+    height: 0;
+    width: 0;
+    left: 0;
+    top: 0;
+    opacity: 1;
+    border-top: 15px solid transparent;
+    border-left: 20px solid yellow;
+    border-bottom: 15px solid transparent;
+}
+.item:hover:after {
+    content: "";
+    position: absolute;
+    height: 0;
+    width: 0;
+    right: 0;
+    top: 0;
+    opacity: 1;
+    border-top: 15px solid transparent;
+    border-right: 20px solid yellow;
+    border-bottom: 15px solid transparent;
+}

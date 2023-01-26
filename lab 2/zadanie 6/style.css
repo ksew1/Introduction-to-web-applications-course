@@ -1,0 +1,117 @@
+body {
+    background-image: url("bg.jpeg");
+    margin: 0;
+    padding: 0;
+}
+
+#navi {
+    position: absolute;
+    color: black;
+    opacity: 0.5;
+    background-color: lightcoral;
+    width: 100%;
+    height: 8vh;
+}
+
+#info {
+    margin: 0;
+    padding: 0;
+    width: 95%;
+    height: 100%;
+    display: flex;
+    list-style: none;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.item {
+    margin-right: 5%;
+}
+
+#logo {
+    padding: 10px;
+    margin-top: 1.5vh;
+    margin-left: 5vw;
+    position: absolute;
+}
+.ham {
+    float: right;
+    display: none;
+    z-index: 200;
+    position: relative;
+    width: 50px;
+    height: 50%;
+    cursor: pointer;
+    font-size: 22px;
+    user-select: none;
+    margin-right: 10%;
+    margin-top: 10px;
+}
+
+.ham input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+    z-index: 20;
+}
+
+.check {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+.ham-animation-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 10%;
+    width: 100%;
+    background-color: black;
+}
+
+.ham-animation-mid {
+    position: absolute;
+    top: 45%;
+    left: 0;
+    height: 10%;
+    width: 100%;
+    transition: transform 0.4s 0s linear;
+    background-color: black;
+}
+
+.ham-animation-bot {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 10%;
+    width: 100%;
+    transition: all 0.4s 0s linear;
+    background-color: black;
+}
+
+.ham input[type="checkbox"]:checked + .check .ham-animation-top {
+    top: 45%;
+    transform: rotate(45deg);
+}
+
+.ham input[type="checkbox"]:checked + .check .ham-animation-bot {
+    bottom: 45%;
+    transform: rotate(-45deg);
+}
+
+.ham input[type="checkbox"]:checked + .check .ham-animation-mid {
+    transform: rotate(-135deg);
+}
+
+@media screen and (max-width: 800px) {
+    #info {
+        display: none;
+    }
+    .ham {
+        display: block;
+    }
+}

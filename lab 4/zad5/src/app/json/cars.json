@@ -1,0 +1,17 @@
+[
+    { "brand": "Fiat", "model": "126p", "color": ["red", "green"] },
+    { "brand": "Fiat", "model": "500", "color": ["red", "green"] },
+    { "brand": "Fiat", "model": "Ducato", "color": ["red", "green"] },
+    { "brand": "Fiat", "model": "Panda", "color": ["red", "green", "blue"]},
+    { "brand": "Audi", "model": "A1", "color": ["red", "green", "blue", "black", "yellow"]},
+    { "brand": "Audi", "model": "A3", "color": ["red", "green", "blue", "black", "yellow"]},
+    { "brand": "Audi", "model": "A5", "color": ["red", "black", "yellow"]},
+    { "brand": "Audi", "model": "A7", "color": ["red", "green", "blue", "black"]},
+    { "brand": "BMW", "model": "M3", "color": ["red", "green", "blue", "black", "orange"]},
+    { "brand": "BMW", "model": "E36", "color": ["black", "orange"]},
+    { "brand": "BMW", "model": "X6", "color": ["black", "orange"]},
+    { "brand": "BMW", "model": "i3", "color": ["black"]},
+    { "brand": "BMW", "model": "i7", "color": ["red", "green", "blue", "black", "yellow"]},
+    { "brand": "BMW", "model": "Z1", "color": ["red", "green", "blue", "black", "yellow"]}
+]
+

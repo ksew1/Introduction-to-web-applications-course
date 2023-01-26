@@ -1,0 +1,24 @@
+<div id="container">
+  <div id="chosen-car">
+    <span>Marka:  {{chosenBrand}} </span>
+    <p>Model: {{chosenModel}}</p>
+    <span>Kolor: </span>
+    <span  *ngIf="chosenColor !== '' " [ngStyle]="{'color': chosenColor}"> &#9724;</span>
+  </div>
+  <ul>
+    <li *ngFor="let brand of brandSet, let i = index" (click)="displayModel(i, $event)">
+      Brand: {{ brand }}
+      <ul *ngFor="let car of cars">
+        <li *ngIf="car.brand == brand && showModel[i]" (click)="displayColor(car.model, $event)">{{ car.model }}
+          <ul *ngFor="let color of car.color">
+            <li class="color-li" *ngIf="showColor.get(car.model)" [ngStyle]="{'color': color}" (click)="chosen(car.brand, car.model, color, $event)">&#9724;</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+</div>
+
+
+

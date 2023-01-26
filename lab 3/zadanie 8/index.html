@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        />
+        <link rel="stylesheet" href="style.css" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="box">
+            <form>
+                <span>New password</span>
+                <div class="password-box">
+                    <input type="password" id="password" />
+                    <span class="material-symbols-outlined" id="eye1">
+                        visibility_off
+                    </span>
+                </div>
+                <span>Repeat new password</span>
+                <div class="password-box">
+                    <input type="password" id="repeat" />
+                    <span class="material-symbols-outlined" id="eye2">
+                        visibility_off
+                    </span>
+                </div>
+                <div id="message"></div>
+                <span>Password requirements</span>
+                <div>
+                    <div id="length-validator" class="validator">
+                        <span class="material-symbols-outlined"> close </span>
+                        at least 8 characters
+                    </div>
+                    <div id="special-validator" class="validator">
+                        <span class="material-symbols-outlined"> close </span>
+
+                        at least one special character
+                    </div>
+                    <div id="capital-validator" class="validator">
+                        <span class="material-symbols-outlined"> close </span>
+
+                        at least one capital letter
+                    </div>
+                    <div id="digit-validator" class="validator">
+                        <span class="material-symbols-outlined"> close </span>
+
+                        at least one digit
+                    </div>
+                </div>
+            </form>
+        </div>
+    </body>
+    <script src="script.js"></script>
+</html>

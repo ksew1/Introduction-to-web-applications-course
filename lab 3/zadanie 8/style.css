@@ -1,0 +1,41 @@
+#box {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+}
+
+form > div > div > .material-symbols-outlined {
+    font-size: small;
+    background-color: lightgray;
+    color: white;
+    padding: 1px;
+    border-radius: 15px;
+}
+form > div > .material-symbols-outlined {
+    font-size: small;
+    color: black;
+    margin-left: -20px;
+}
+
+.password-box {
+    margin-bottom: 10%;
+}
+
+.validator {
+    margin-top: 5%;
+}
+
+#message {
+    height: 3vh;
+    margin-bottom: 3%;
+}
+
+.password-box > input {
+    border: 1px solid lightgray;
+    border-radius: 4px;
+}

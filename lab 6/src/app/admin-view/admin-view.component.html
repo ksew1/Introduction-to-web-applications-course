@@ -1,0 +1,80 @@
+<div id="box">
+  <div id="users-list">
+    <div class="record" *ngFor="let user of users">
+      <b>Email użytkownika: </b> <br />{{ user.email }}
+      <hr color="white" />
+
+      <form id="form" [formGroup]="user.form" (change)="onChange(user)">
+        <input
+          type="checkbox"
+          id="client"
+          name="client"
+          formControlName="client"
+        />
+        <label for="client"> client</label><br />
+
+        <input
+          type="checkbox"
+          id="menager"
+          name="menager"
+          formControlName="menager"
+        />
+        <label for="menager"> menager</label><br />
+        <input
+          type="checkbox"
+          id="admin"
+          name="admin"
+          formControlName="admin"
+        />
+        <label for="admin"> admin</label><br />
+      </form>
+      <button  class="ban-btn" (click)="changeBan(user)">
+        <ng-container
+          *ngIf="user.roles.ban == true; then first; else second"
+        ></ng-container>
+        <ng-template #first> <span class="text">Unban</span> </ng-template>
+        <ng-template #second> <span class="text">Ban</span> </ng-template>
+      </button>
+    </div>
+  </div>
+  <div id="per-form">
+    <form #pForm="ngForm" (ngSubmit)="changePer(pForm.value)" novalidate>
+      <div class="custom-control custom-radio">
+        <input
+          type="radio"
+          class="custom-control-input"
+          [(ngModel)]="persistance"
+          [value]="0"
+          name="persistence"
+          ngModel
+        />
+        <label class="custom-control-label" for="local">Local</label>
+      </div>
+      <div class="custom-control custom-radio">
+        <input
+          type="radio"
+          class="custom-control-input"
+          [(ngModel)]="persistance"
+          [value]="1"
+          name="persistence"
+          ngModel
+        />
+        <label class="custom-control-label" for="sesssion">Session</label>
+      </div>
+      <div class="custom-control custom-radio">
+        <input
+          type="radio"
+          class="custom-control-input"
+          [(ngModel)]="persistance"
+          [value]="2"
+          name="persistence"
+          ngModel
+        />
+        <label class="custom-control-label" for="none">None</label>
+      </div>
+      <button type="submit" id="per-btn">
+        <span class="text">Set persistance</span>
+      </button>
+    </form>
+  </div>
+</div>

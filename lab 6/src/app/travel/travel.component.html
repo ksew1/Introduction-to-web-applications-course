@@ -1,0 +1,108 @@
+<div id="flex-box">
+  <div class="element" style="text-align: center">
+    <img id="image" [src]="travel.imageLink" />
+
+    <h4 class="travel-text">{{ travel.name | uppercase }}</h4>
+
+    <span class="travel-text"
+      ><b>Lokalizacja: </b> {{ travel.country | uppercase }}</span
+    >
+
+    <hr class="line" />
+
+    <span class="travel-text"> <b>Start: </b>{{ travel.startDate }}</span>
+
+    <hr class="line" />
+
+    <span class="travel-text"><b>Koniec: </b> {{ travel.endDate }}</span>
+
+    <hr class="line" />
+
+    <span class="travel-text">
+      <b>Cena: </b> {{ travel.price | currency }}
+    </span>
+
+    <hr class="line" />
+    <b>Oceny: </b>
+    <span>
+      <span *ngIf="rating.rating == 0; then thenRating; else elseRating"></span>
+      <ng-template #thenRating>
+        Brak ocen <span [ngStyle]="{ color: 'orange' }">&#9733;</span>
+      </ng-template>
+      <ng-template #elseRating>
+        Ocena: {{ (rating.rating / rating.counter).toFixed(2) }}
+        <span [ngStyle]="{ color: 'orange' }">&#9733;</span>
+        Liczba ocen: {{ rating.counter }}
+      </ng-template>
+    </span>
+
+    <hr class="line" />
+    <b>Liczba miejsc: </b>
+    <span
+      class="travel-text"
+      [ngStyle]="{ color: travel.seats > 3 ? 'green' : 'red' }"
+    >
+      <div *ngIf="travel.seats == 0; then thenBlock; else elseBlock"></div>
+      <ng-template #thenBlock> Brak miejsc </ng-template>
+      <ng-template #elseBlock>{{ travel.seats }}</ng-template>
+    </span>
+
+    <hr class="line" />
+    <b>Opis: </b>
+    <span>{{ travel.description }}</span>
+
+    <hr class="line" />
+    <div id="button-container">
+      <button
+        id="plus-button"
+        [ngStyle]="{ display: travel.seats == 0 ? 'none' : 'inline-block' }"
+        (click)="orderTravel(travel)"
+      >
+        +
+      </button>
+      <button
+        id="minus-button"
+        [ngStyle]="{
+          display:
+            travel.seats == this.travel.maxSeats ? 'none' : 'inline-block'
+        }"
+        (click)="resign(travel)"
+      >
+        <span class="grad-text">-</span>
+      </button>
+    </div>
+    <br />
+    <a id="return" routerLink="/travels"> <span class="grad-text">Powrót do listy wycieczek</span>  </a>
+  </div>
+
+  <div
+    class="element"
+    *ngIf="(user.bought[travel.id] != null || user.roles.menager == true) && user.roles.ban == false"
+  >
+    <app-rating-form [id]="this.id" (opinionEvent)="addOpinion($event)"></app-rating-form>
+  </div>
+  <div class="element">
+    <h3>Opine:</h3>
+    <div *ngFor="let opinion of this.travel.posts">
+      <hr />
+      <b>{{ opinion.date }}</b>
+      <br />
+
+      <b>Użtkownik:</b>
+      {{ opinion.nick }} <br />
+      <b>Nazwa wycieczki: </b>{{ opinion.name }}
+      {{ opinion.opinion }}
+      <br />
+      <b>Ocena: </b>
+      <span *ngIf="opinion.rating == 0; then thenRating; else elseRating"></span>
+      <ng-template #thenRating>
+        Nie oceniono <span [ngStyle]="{ color: 'orange' }">&#9733;</span>
+      </ng-template>
+      <ng-template #elseRating>
+        Ocena: {{ opinion.rating }}
+        <span [ngStyle]="{ color: 'orange' }">&#9733;</span>
+
+      </ng-template>
+    </div>
+  </div>
+</div>

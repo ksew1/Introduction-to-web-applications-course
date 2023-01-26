@@ -1,0 +1,67 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#container {
+  display: flex;
+}
+
+#company-name {
+  text-align: center;
+  font-size: 30px;
+  background: -webkit-linear-gradient(#743ad5, #d53a9d);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+#box {
+  float: left;
+  display: flex;
+  justify-content: space-between;
+  border: 5px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+  width: 96.5vw;
+  padding: 10px;
+  box-shadow: 5px 5px 5px lightgrey;
+}
+
+.nav-element {
+  background: -webkit-linear-gradient(#743ad5, #d53a9d);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-left: 0.5%;
+  margin-right: 0.5%;
+  font-weight: bold;
+  font-size: large;
+  text-decoration: none;
+}
+#cart-info {
+  float: right;
+  font-size: large;
+  background: -webkit-linear-gradient(#743ad5, #d53a9d);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  width: 20vw;
+}
+#notification {
+  color: black;
+  margin-right: 0.5%;
+  float: right;
+  font-size: large;
+  background: -webkit-linear-gradient(#743ad5, #d53a9d);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  width: 5vw;
+}
+#account {
+  margin-right: 0.5%;
+  float: right;
+  font-size: large;
+  width: 16vw;
+  font-weight: bold;
+}

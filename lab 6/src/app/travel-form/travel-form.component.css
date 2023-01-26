@@ -1,0 +1,30 @@
+
+#form-container {
+  background-color: white;
+  padding: 1%;
+  color: white;
+  border-radius: 10px;
+  background-image: linear-gradient(to left, #743ad5, #d53a9d);
+}
+hr {
+  color: white;
+}
+#grad-text {
+  background: -webkit-linear-gradient(#743ad5, #d53a9d);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+
+#submit-button {
+  text-align: center;
+  width: 15vw;
+  padding: 3%;
+  border-radius: 20px;
+  background-color: white;
+  border: none;
+  margin-left: 15%;
+
+}

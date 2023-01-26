@@ -1,0 +1,15 @@
+hr {
+  color: white;
+}
+#submit-button {
+  background-color: white;
+  border: none;
+  padding: 1%;
+  border-radius: 10px;
+}
+#submit-text {
+  background: -webkit-linear-gradient(#743ad5, #d53a9d);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

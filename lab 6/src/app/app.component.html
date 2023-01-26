@@ -1,0 +1,48 @@
+<div id="company-name">gradient<b>travel.</b></div>
+<nav id="box">
+
+  <a class="nav-element" routerLink="/home">Dom</a>
+  <a class="nav-element" routerLink="/travels">Wycieczki</a>
+
+  <a *ngIf="data2.menager == true" class="nav-element" routerLink="/trip"
+    >Zarządzanie wycieczkami</a
+  >
+  <a *ngIf="data2.client == true" class="nav-element" routerLink="/cart"
+    >Koszyk</a
+  >
+  <a *ngIf="data2.admin == true" class="nav-element" routerLink="/admin">
+    Widok admina
+  </a>
+  <a *ngIf="data2.client == true" class="nav-element" routerLink="/history"
+    >Historia</a
+  >
+  <a *ngIf="data2.client == true" routerLink="/cart">
+    <div id="cart-info">
+      <b>Zamówione: </b> {{ data.counter }} <b>Cena: </b>
+      {{ data.cost | currency }}
+    </div>
+  </a>
+  <a *ngIf="data2.client == true" routerLink="/history">
+    <div id="notification">
+      <div *ngIf="data.near > 0; then thenBlock; else elseBlock"></div>
+      <ng-template #thenBlock>
+        <span class="material-symbols-outlined"> notifications_active </span>
+        <span>{{ data.near }}</span>
+      </ng-template>
+      <ng-template #elseBlock
+        ><span class="material-symbols-outlined"> notifications </span>
+      </ng-template>
+    </div>
+  </a>
+  <div id="account">
+    <app-account></app-account>
+  </div>
+</nav>
+
+
+
+
+<div style="clear: both"></div>
+<div id="container">
+  <router-outlet></router-outlet>
+</div>

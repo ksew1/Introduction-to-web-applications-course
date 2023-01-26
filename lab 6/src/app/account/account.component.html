@@ -1,0 +1,13 @@
+<ng-container *ngIf="auth.currentUser === null; then first; else second"></ng-container>
+<ng-template #first >
+  <div class="flex">
+    <a  class="element" routerLink="/singup">Zarejestruj</a>
+    <a class="element" routerLink="/singin">Zaloguj</a>
+  </div>
+</ng-template>
+<ng-template #second class="flex">
+  <div class="flex">
+    <a class="element">{{ auth.currentUser?.displayName }}</a>
+    <div id="log-out-btn" (click)="logOut()">Wyloguj</div>
+  </div>
+</ng-template>

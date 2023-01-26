@@ -1,0 +1,12 @@
+
+<form id="form" [formGroup]="filterForm" (change)="onChange()">
+
+  <input type="checkbox" id="status0" name="status0" value=0 formControlName="status0"/>
+  <label for="status1"> archiwalna</label><br />
+
+  <input type="checkbox" id="status1" name="status1" value=1 formControlName="status1"/>
+  <label for="status1"> aktywna</label><br />
+  <input type="checkbox" id="status2" name="status2" value=2 formControlName="status2"/>
+  <label for="status2"> oczekiwania</label><br />
+
+</form>

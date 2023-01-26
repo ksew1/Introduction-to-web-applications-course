@@ -1,0 +1,36 @@
+<div id="flex">
+  <app-travel-form></app-travel-form>
+
+  <div id="travels">
+    <b style="margin-left: 10px;">Wybierz aby edytować: </b>
+    <ul>
+      <li (click)="editT(travel)" *ngFor="let travel of travels" >
+        {{travel.name}}
+
+      </li>
+    </ul>
+
+  </div>
+
+  <div  *ngIf="edit != null" >
+    <div id="data">
+      <b>Kliknij aby edytować: </b>
+      <hr>
+      <b>Nazwa: </b> <span #name contenteditable="true">{{edit.name}}</span> <br>
+      <b>Kraj: </b> <span #country contenteditable="true">{{edit.country}}</span> <br>
+      <b>Opis: </b> <span #desc contenteditable="true">{{edit.description}}</span> <br>
+      <b>Start: </b> <span #startDate contenteditable="true">{{edit.startDate}}</span> <br>
+      <b>Koniec: </b> <span #endDate contenteditable="true">{{edit.endDate}}</span> <br>
+      <b>Miejsca: </b> <span #maxSeats contenteditable="true">{{edit.maxSeats}}</span> <br>
+      <b>Cena: </b> <span #price contenteditable="true">{{edit.price}}</span> <br>
+      <hr>
+
+      <button class="btn" (click)="changeTravel()"> <span class="grad-text">Zmodyfikuj dane</span></button>
+      <button class="btn" (click)="deleteTravel()"> <span class="grad-text">Usuń wyczieczkę</span></button>
+      <br>
+
+    </div>
+
+  </div>
+
+</div>

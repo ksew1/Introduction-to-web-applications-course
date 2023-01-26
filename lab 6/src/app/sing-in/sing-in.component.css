@@ -1,0 +1,29 @@
+#box {
+  text-align: center;
+  padding: 3%;
+  width: 30vw;
+  height: 30vh;
+  border: 5px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+}
+#flex {
+  width: 90vw;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#btn {
+  color: white;
+  margin-top: 5%;
+  font-size: large;
+  background-image: linear-gradient(to left, #743ad5, #d53a9d);
+  border-radius: 10px;
+  border: none;
+  padding: 5px;
+}
+
+.input-fields {
+ margin-top: 3%;
+}

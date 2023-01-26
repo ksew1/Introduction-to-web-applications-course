@@ -1,0 +1,25 @@
+.flex {
+  display: flex;
+}
+.element {
+  background: -webkit-linear-gradient(#743ad5, #d53a9d);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: black;
+  margin-left: 3%;
+  margin-right: 3%;
+  font-weight: bold;
+  font-size: large;
+  text-decoration: none;
+}
+#log-out-btn {
+  font-size: small;
+  margin-left: 10px;
+  text-align: center;
+  width: 5vw;
+  padding: 3%;
+  border-radius: 20px;
+  background-image: linear-gradient(to left, #743ad5, #d53a9d);
+  color: white;
+}

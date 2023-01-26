@@ -1,0 +1,16 @@
+<form id="form" (ngSubmit)="onSubmit()" [formGroup]="postForm">
+  <br />
+
+  <label for="title">Title: </label>
+  <input id="title" type="text" formControlName="title" />
+
+  <hr />
+
+  <label for="body">Body: </label>
+  <input id="body" type="text" formControlName="body" />
+  <hr />
+
+  <button id="submit-button" type="submit" [disabled]="!postForm.valid">
+    Submit
+  </button>
+</form>

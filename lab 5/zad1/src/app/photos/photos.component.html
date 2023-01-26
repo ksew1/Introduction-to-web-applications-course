@@ -1,0 +1,11 @@
+<div id="photos-box">
+    <div class="photo" *ngFor="let photo of photos">
+        <a routerLink="/photos/{{ photo.id }}"
+          ><img src="{{ photo.thumbnailUrl }}"
+        /></a>
+        <p>Album ID: {{ photo.albumId }}</p>
+        <p>ID: {{ photo.id }}</p>
+      </div>
+
+</div>
+
